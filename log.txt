@@ -1,0 +1,34 @@
+-----Spotify Log Entry Start-----
+Processed on:
+Mon Oct 29 2018 21:48:14 GMT-0400 (Eastern Daylight Time)
+
+terminal commands:
+C:\Program Files\nodejs\node.exe,C:\Users\Emily\desktop\Mr.Meme\mr.meme.js,spotify-this-song,come,together
+
+Data Output: 
+
+========= Result 1 =========
+Artist: The Beatles
+Song title: Come Together - Remastered 2009
+Album name: Abbey Road (Remastered)
+URL Preview: null
+=============================
+-----Spotify Log Entry End-----
+
+
+========= Result 1 =========
+Artist: Red Hot Chili Peppers
+Song title: Dark Necessities
+Album name: The Getaway
+URL Preview: https://p.scdn.co/mp3-preview/603321bf69cb0fd27c44ae875ff73c6dfc856311?cid=d4a26337a6c443a4a3b6b68c04aa0bf9
+=============================
+-----Spotify Log Entry Start-----
+Processed on:
+Mon Oct 29 2018 21:49:36 GMT-0400 (Eastern Daylight Time)
+
+terminal commands:
+C:\Program Files\nodejs\node.exe,C:\Users\Emily\desktop\Mr.Meme\mr.meme.js,spotify-this-song,dark,necessities
+
+Data Output: 
+-----Spotify Log Entry End-----
+
