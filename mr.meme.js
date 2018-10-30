@@ -2,7 +2,7 @@ var dotenv = require("dotenv").config()
 var request = require('request');
 var fs = require("fs");
 var keys = require("./keys.js");
-var spotify = require('node-spotify-api');
+var Spotify = require('node-spotify-api');
 
 // this will pick up the users input example: node Mr.Meme [2 user input]
 var command = process.argv[2];
@@ -27,14 +27,24 @@ switch (command) {
 };
 
 
-//error function if no response
-function errorfunction(resperror) {
- if(resperror){
-     return console.log("error occured: ", resperror)
+//error function if no response ------------------------
+function errorFunction(respError) {
+ if(respError){
+     return console.log("error occured: ", respError)
  }
 };
 
-// functions for the spotify-this-song command --------
+function errorFunctionStart(respError) {
+    errorFunction();
+    console.log("\nxxxx Log Started xxxx");
+};
+
+function errorFunctionEnd(respError) {
+    errorFunction();
+    console.log("xxxx Log Ended xxxx");
+};
+
+// functions for the spotify-this-song command -----------
 function searchSong(searchval) {
 
     // Default search value if no song is given
@@ -54,9 +64,9 @@ function searchSong(searchval) {
         console.log("\nYou requested to return: " + searchLimit + " songs");
         
         // Resets the searchValue to account for searchLimit
-        searchValue = "";
+        searchval = "";
         for (var i = 4; i < process.argv.length; i++) {        
-            searchValue += process.argv[i] + " ";
+            searchval += process.argv[i] + " ";
         };
 
     } else {
@@ -65,7 +75,7 @@ function searchSong(searchval) {
     }
    
     // Searches Spotify with given values
-    spotify.search({ type: 'track', query: searchValue, limit: searchLimit }, function(resperror, response) {
+    spotify.search({ type: 'track', query: searchval, limit: searchLimit }, function(respError, response) {
 
         fs.appendFile("log.txt", "-----Spotify Log Entry Start-----\nProcessed on:\n" + Date() + "\n\n" + "terminal commands:\n" + process.argv + "\n\n" + "Data Output: \n", errorFunctionStart());
 
